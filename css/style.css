@@ -1,0 +1,2 @@
+*{margin:0;padding:0;-webkit-box-sizing:border-box;box-sizing:border-box}body{background:#000}.word{height:100vh;width:100%;display:-ms-grid;display:grid;-ms-grid-columns:(1fr)[2];grid-template-columns:repeat(2, 1fr)}.letter{display:-ms-grid;display:grid;-ms-grid-columns:(1fr)[4];grid-template-columns:repeat(4, 1fr)}.l,.r,.t,.b{border-color:#fff}
+/*# sourceMappingURL=style.css.map */

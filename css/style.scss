@@ -1,0 +1,47 @@
+$a: black;
+$b: white;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $a;
+}
+
+.word {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.letter {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.l,
+.r,
+.t,
+.b {
+  border-color: $b;
+}
+
+// .l {
+//   border-left: 2px solid;
+// }
+
+// .r {
+//   border-right: 2px solid;
+// }
+
+// .t {
+//   border-top: 2px solid;
+// }
+
+// .b {
+//   border-bottom: 2px solid;
+// }
