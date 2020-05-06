@@ -563,8 +563,8 @@ function orient(e) {
   document.getElementById("debug").innerHTML =
     `
     <ul>
-      <li>x: ${x}</li>
-      <li>y: ${y}</li>
+      <li>X: ${x}</li>
+      <li>Y: ${y}</li>
     </ul>`;
 
   let block = document.querySelectorAll('.block');
