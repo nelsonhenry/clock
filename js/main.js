@@ -6,6 +6,8 @@ let
   sA = document.querySelector('#s-a'),
   sB = document.querySelector('#s-b');
 
+let isTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
 
 function do0(el) {
   el.innerHTML = `
@@ -531,6 +533,12 @@ function move(e) {
 
   let block = document.querySelectorAll('.block');
   for (el of block) {
+    el.style.borderTopLeftRadius = (((100 - yPer) + (100 - xPer)) / 2) + '%'
+    el.style.borderTopRightRadius = (((100 - yPer) + xPer) / 2) + '%'
+    el.style.borderBottomLeftRadius = ((yPer + (100 - xPer)) / 2) + '%'
+    el.style.borderBottomRightRadius = ((yPer + xPer) / 2) + '%'
+
+
     // el.style.borderTopLeftRadius = xPer + '%'
     // el.style.borderTopRightRadius = yPer + '%'
     // el.style.borderBottomLeftRadius = (100 - xPer) + '%'
@@ -541,10 +549,6 @@ function move(e) {
     // el.style.borderBottomLeftRadius = (100 - xPer) + '%'
     // el.style.borderBottomRightRadius = (100 - yPer) + '%'
 
-    el.style.borderTopLeftRadius = (((100 - yPer) + (100 - xPer)) / 2) + '%'
-    el.style.borderTopRightRadius = (((100 - yPer) + xPer) / 2) + '%'
-    el.style.borderBottomLeftRadius = ((yPer + (100 - xPer)) / 2) + '%'
-    el.style.borderBottomRightRadius = ((yPer + xPer) / 2) + '%'
 
     // el.style.borderTopLeftRadius = yPer + '%'
     // el.style.borderTopRightRadius = (100 - xPer) + '%'
@@ -553,13 +557,36 @@ function move(e) {
   }
 }
 
-window.addEventListener('mousemove', event => {
-  if (!wait) {
-    move(event);
-    wait = true;
-    setTimeout(() => wait = false, 25);
+function orient(e) {
+  let yPer = ((Math.round(e.beta) + 180) / 360) * 100;
+  let xPer = ((Math.round(e.gamma) + 180) / 360) * 100;
+  document.getElementById("debug").innerHTML =
+    `
+    <ul>
+      <li>x: ${x}</li>
+      <li>y: ${y}</li>
+    </ul>`;
+
+  let block = document.querySelectorAll('.block');
+  for (el of block) {
+    el.style.borderTopLeftRadius = (((100 - yPer) + (100 - xPer)) / 2) + '%'
+    el.style.borderTopRightRadius = (((100 - yPer) + xPer) / 2) + '%'
+    el.style.borderBottomLeftRadius = ((yPer + (100 - xPer)) / 2) + '%'
+    el.style.borderBottomRightRadius = ((yPer + xPer) / 2) + '%'
   }
-});
+}
+
+(isTouch) ?
+window.addEventListener("deviceorientation", orient, true):
+  window.addEventListener('mousemove', event => {
+    if (!wait) {
+      move(event);
+      wait = true;
+      setTimeout(() => wait = false, 25);
+    }
+  });
+
+
 
 // if (window.DeviceMotionEvent) {
 //   window.addEventListener("devicemotion", process, false);
@@ -578,15 +605,3 @@ window.addEventListener('mousemove', event => {
 //   var y = Math.round(ev.accelerationIncludingGravity.y);
 //   document.getElementById("debug").innerHTML = "<ul><li>X : " + x + "</li><li>Y : " + y + "</li></ul>";
 // }
-window.addEventListener("deviceorientation", handleOrientation, true);
-
-function handleOrientation(event) {
-  var y = Math.round(event.beta);
-  var x = Math.round(event.gamma);
-  document.getElementById("debug").innerHTML =
-    `
-    <ul>
-      <li>x: ${x}</li>
-      <li>y: ${y}</li>
-    </ul>`;
-}
