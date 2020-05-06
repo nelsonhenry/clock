@@ -566,8 +566,8 @@ if (window.DeviceMotionEvent) {
 }
 
 function process(event) {
-  var x = event.accelerationIncludingGravity.x;
-  var y = event.accelerationIncludingGravity.y;
-  var z = event.accelerationIncludingGravity.z;
-  document.getElementById("debug").innerHTML = "<ul><li>X : " + x + "</li><li>Y : " + y + "</li><li>Z : " + z + "</li></ul>";
+  var alpha = event.alpha;
+  var beta = event.beta;
+  var gamma = event.gamma;
+  document.getElementById("debug").innerHTML = "<ul><li>Alpha : " + alpha + "</li><li>Beta : " + beta + "</li><li>Gamma : " + gamma + "</li></ul>";
 }
