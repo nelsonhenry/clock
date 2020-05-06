@@ -565,12 +565,12 @@ window.addEventListener('mousemove', event => {
 //   window.addEventListener("devicemotion", process, false);
 // }
 
-if (window.DeviceOrientationEvent) {
-  window.addEventListener('deviceorientation', deviceOrientationHandler, false);
-  document.getElementById("debug").innerText = "Supported!";
-} else {
-  document.getElementById("debug").innerText = "not Supported!";
-}
+// if (window.DeviceOrientationEvent) {
+//   window.addEventListener('deviceorientation', deviceOrientationHandler, false);
+//   document.getElementById("debug").innerText = "Supported!";
+// } else {
+//   document.getElementById("debug").innerText = "not Supported!";
+// }
 
 
 // function process(ev) {
@@ -578,3 +578,19 @@ if (window.DeviceOrientationEvent) {
 //   var y = Math.round(ev.accelerationIncludingGravity.y);
 //   document.getElementById("debug").innerHTML = "<ul><li>X : " + x + "</li><li>Y : " + y + "</li></ul>";
 // }
+window.addEventListener("deviceorientation", handleOrientation, true);
+
+function handleOrientation(event) {
+  var absolute = event.absolute;
+  var alpha = event.alpha;
+  var beta = event.beta;
+  var gamma = event.gamma;
+  document.getElementById("debug").innerHTML =
+    `
+    <ul>
+      <li>absolute: ${absolute}</li>
+      <li>alpha: ${alpha}</li>
+      <li>beta: ${beta}</li>
+      <li>gamma: ${gamma}</li>
+    </ul>`;
+}
