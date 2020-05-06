@@ -563,11 +563,11 @@ function orient(e) {
   document.getElementById("debug").innerHTML =
     `
     <ul>
-      <li>X: ${x}</li>
-      <li>Y: ${y}</li>
+      <li>X: ${xPer}</li>
+      <li>Y: ${yPer}</li>
     </ul>`;
 
-  document.body.style.backgroundColor = `hsl(${x}, ${100 - y}%, 50%)`;
+  document.body.style.backgroundColor = `hsl(${xPer}, ${100 - yPer}%, 50%)`;
   let block = document.querySelectorAll('.block');
   for (el of block) {
     el.style.borderTopLeftRadius = (((100 - yPer) + (100 - xPer)) / 2) + '%'
