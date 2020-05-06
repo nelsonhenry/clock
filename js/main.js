@@ -562,8 +562,8 @@ function move(e) {
 }
 
 function orient(e) {
-  let yPer = Math.round((e.beta + 180) / 360 * 200);
-  let xPer = Math.round((e.gamma + 180) / 360 * 200);
+  let yPer = Math.round((e.beta + 180) / 360 * 100);
+  let xPer = Math.round((e.gamma + 180) / 360 * 100);
   document.getElementById("debug").innerHTML =
     `
     <ul>
