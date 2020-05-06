@@ -525,7 +525,7 @@ function move(e) {
     yPer = Math.round((mY / wH) * 100),
     x = Math.round((mX / wW) * 180),
     y = Math.round((mY / wH) * 100);
-  document.body.style.background = `hsl(${x}, ${100 - y}%, 50%)`;
+  document.body.style.backgroundColor = `hsl(${x}, ${100 - y}%, 50%)`;
   // let blockX = document.querySelectorAll('.x');
   // for (el of blockX) {
   //   el.style.background = `hsl(${y}, ${x}%, 50%)`
@@ -567,6 +567,7 @@ function orient(e) {
       <li>Y: ${y}</li>
     </ul>`;
 
+  document.body.style.backgroundColor = `hsl(${x}, ${100 - y}%, 50%)`;
   let block = document.querySelectorAll('.block');
   for (el of block) {
     el.style.borderTopLeftRadius = (((100 - yPer) + (100 - xPer)) / 2) + '%'
