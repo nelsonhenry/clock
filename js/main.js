@@ -574,10 +574,10 @@ function orient(e) {
   document.body.style.backgroundColor = `hsl(${xPer}, ${100 - yPer}%, 50%)`;
   let block = document.querySelectorAll('.block');
   for (el of block) {
-    el.style.borderTopLeftRadius = ((yPer + xPer) / 2) + '%'
-    el.style.borderTopRightRadius = ((yPer + (100 - xPer)) / 2) + '%'
-    el.style.borderBottomLeftRadius = (((100 - yPer) + xPer) / 2) + '%'
-    el.style.borderBottomRightRadius = (((100 - yPer) + (100 - xPer)) / 2) + '%'
+    el.style.borderTopLeftRadius = ((yPer + xPer)) + '%'
+    el.style.borderTopRightRadius = ((yPer + (100 - xPer))) + '%'
+    el.style.borderBottomLeftRadius = (((100 - yPer) + xPer)) + '%'
+    el.style.borderBottomRightRadius = (((100 - yPer) + (100 - xPer))) + '%'
   }
 }
 
