@@ -581,16 +581,12 @@ window.addEventListener('mousemove', event => {
 window.addEventListener("deviceorientation", handleOrientation, true);
 
 function handleOrientation(event) {
-  var absolute = event.absolute;
-  var alpha = event.alpha;
-  var beta = event.beta;
-  var gamma = event.gamma;
+  var y = Math.round(event.beta);
+  var x = Math.round(event.gamma);
   document.getElementById("debug").innerHTML =
     `
     <ul>
-      <li>absolute: ${absolute}</li>
-      <li>alpha: ${alpha}</li>
-      <li>beta: ${beta}</li>
-      <li>gamma: ${gamma}</li>
+      <li>x: ${x}</li>
+      <li>y: ${y}</li>
     </ul>`;
 }
