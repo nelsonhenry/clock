@@ -568,5 +568,5 @@ if (window.DeviceMotionEvent) {
 function process(ev) {
   var x = Math.round(ev.accelerationIncludingGravity.x);
   var y = Math.round(ev.accelerationIncludingGravity.y);
-  document.getElementById("debug").innerHTML = "<ul><li>X : " + x + "</li><li>Y : " + y + "</li><li>Z : " + z + "</li></ul>";
+  document.getElementById("debug").innerHTML = "<ul><li>X : " + x + "</li><li>Y : " + y + "</li></ul>";
 }
