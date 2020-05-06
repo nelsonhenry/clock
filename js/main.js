@@ -561,12 +561,20 @@ window.addEventListener('mousemove', event => {
   }
 });
 
-if (window.DeviceMotionEvent) {
-  window.addEventListener("devicemotion", process, false);
+// if (window.DeviceMotionEvent) {
+//   window.addEventListener("devicemotion", process, false);
+// }
+
+if (window.DeviceOrientationEvent) {
+  window.addEventListener('deviceorientation', deviceOrientationHandler, false);
+  document.getElementById("debug").innerText = "Supported!";
+} else {
+  document.getElementById("debug").innerText = "not Supported!";
 }
 
-function process(ev) {
-  var x = Math.round(ev.accelerationIncludingGravity.x);
-  var y = Math.round(ev.accelerationIncludingGravity.y);
-  document.getElementById("debug").innerHTML = "<ul><li>X : " + x + "</li><li>Y : " + y + "</li></ul>";
-}
+
+// function process(ev) {
+//   var x = Math.round(ev.accelerationIncludingGravity.x);
+//   var y = Math.round(ev.accelerationIncludingGravity.y);
+//   document.getElementById("debug").innerHTML = "<ul><li>X : " + x + "</li><li>Y : " + y + "</li></ul>";
+// }
