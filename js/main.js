@@ -1,354 +1,3 @@
-// let wait = false,
-//   bdT = document.querySelectorAll('.t'),
-//   bdB = document.querySelectorAll('.b'),
-//   bdL = document.querySelectorAll('.l'),
-//   bdR = document.querySelectorAll('.r');
-
-// function move(e) {
-//   let mX = e.clientX,
-//     mY = e.clientY,
-//     wW = window.innerWidth,
-//     wH = window.innerHeight,
-//     x = Math.round((mX / wW) * 100),
-//     y = Math.round((mY / wH) * 100);
-//   // console.log(perX, perY);
-//   for (let el of bdT)
-//     el.style.borderTop = y + 'px solid white';
-//   for (let el of bdB)
-//     el.style.borderBottom = y + 'px solid white';
-//   for (let el of bdL)
-//     el.style.borderLeft = x + 'px solid white';
-//   for (let el of bdR)
-//     el.style.borderRight = x + 'px solid white';
-// }
-
-// window.addEventListener('mousemove', event => {
-//   if (!wait) {
-//     move(event);
-//     wait = true;
-//     setTimeout(() => wait = false, 1);
-//   }
-// });
-
-// let cd = new Date(),
-//   cdH = cd.getHours().toString().split(''),
-//   cdHA = cdH[0],
-//   cdHB = cdH[1],
-//   cdM = cd.getSeconds().toString().split(''),
-//   cdMA = cdM[0],
-//   cdMB = cdM[1];
-
-
-// function doDate() {
-
-//   switch (cdHA) {
-//     case '0':
-//       do0(hA);
-//       break;
-//     case '1':
-//       do1(hA);
-//       break;
-//     case '2':
-//       do2(hA);
-//       break;
-//     case '3':
-//       do3(hA);
-//       break;
-//     case '4':
-//       do4(hA);
-//       break;
-//     case '5':
-//       do5(hA);
-//       break;
-//     case '6':
-//       do6(hA);
-//       break;
-//     case '7':
-//       do7(hA);
-//       break;
-//     case '8':
-//       do8(hA);
-//       break;
-//     case '9':
-//       do9(hA);
-//       break;
-//     default:
-//       do0(hA);
-//   }
-
-//   switch (cdHB) {
-//     case '0':
-//       do0(hB);
-//       break;
-//     case '1':
-//       do1(hB);
-//       break;
-//     case '2':
-//       do2(hB);
-//       break;
-//     case '3':
-//       do3(hB);
-//       break;
-//     case '4':
-//       do4(hB);
-//       break;
-//     case '5':
-//       do5(hB);
-//       break;
-//     case '6':
-//       do6(hB);
-//       break;
-//     case '7':
-//       do7(hB);
-//       break;
-//     case '8':
-//       do8(hB);
-//       break;
-//     case '9':
-//       do9(hB);
-//       break;
-//     default:
-//       do0(hB);
-//   }
-
-//   switch (cdMA) {
-//     case '0':
-//       do0(mA);
-//       break;
-//     case '1':
-//       do1(mA);
-//       break;
-//     case '2':
-//       do2(mA);
-//       break;
-//     case '3':
-//       do3(mA);
-//       break;
-//     case '4':
-//       do4(mA);
-//       break;
-//     case '5':
-//       do5(mA);
-//       break;
-//     case '6':
-//       do6(mA);
-//       break;
-//     case '7':
-//       do7(mA);
-//       break;
-//     case '8':
-//       do8(mA);
-//       break;
-//     case '9':
-//       do9(mA);
-//       break;
-//     default:
-//       do0(mA);
-//   }
-
-//   switch (cdMB) {
-//     case '0':
-//       do0(mB);
-//       break;
-//     case '1':
-//       do1(mB);
-//       break;
-//     case '2':
-//       do2(mB);
-//       break;
-//     case '3':
-//       do3(mB);
-//       break;
-//     case '4':
-//       do4(mB);
-//       break;
-//     case '5':
-//       do5(mB);
-//       break;
-//     case '6':
-//       do6(mB);
-//       break;
-//     case '7':
-//       do7(mB);
-//       break;
-//     case '8':
-//       do8(mB);
-//       break;
-//     case '9':
-//       do9(mB);
-//       break;
-//     default:
-//       do0(mB);
-//   }
-// }
-
-// function updateDate() {
-//   let d = new Date(),
-//     dH = d.getHours().toString().split(''),
-//     dHA = dH[0],
-//     dHB = dH[1],
-//     dM = d.getSeconds().toString().split(''),
-//     dMA = dM[0],
-//     dMB = dM[1];
-//   // console.log(dHA, dHB, dMA, dMB);
-
-//   if (cdHA > dHA) {
-//     switch (dHA) {
-//       case '0':
-//         do0(hA);
-//         break;
-//       case '1':
-//         do1(hA);
-//         break;
-//       case '2':
-//         do2(hA);
-//         break;
-//       case '3':
-//         do3(hA);
-//         break;
-//       case '4':
-//         do4(hA);
-//         break;
-//       case '5':
-//         do5(hA);
-//         break;
-//       case '6':
-//         do6(hA);
-//         break;
-//       case '7':
-//         do7(hA);
-//         break;
-//       case '8':
-//         do8(hA);
-//         break;
-//       case '9':
-//         do9(hA);
-//         break;
-//       default:
-//         do0(hA);
-//     }
-//     cdHA = dHA;
-//   }
-
-//   if (cdHB > dHB) {
-//     switch (dHB) {
-//       case '0':
-//         do0(hB);
-//         break;
-//       case '1':
-//         do1(hB);
-//         break;
-//       case '2':
-//         do2(hB);
-//         break;
-//       case '3':
-//         do3(hB);
-//         break;
-//       case '4':
-//         do4(hB);
-//         break;
-//       case '5':
-//         do5(hB);
-//         break;
-//       case '6':
-//         do6(hB);
-//         break;
-//       case '7':
-//         do7(hB);
-//         break;
-//       case '8':
-//         do8(hB);
-//         break;
-//       case '9':
-//         do9(hB);
-//         break;
-//       default:
-//         do0(hB);
-//     }
-//     cdHB = dHB;
-//   }
-
-//   if (cdMA > dMA) {
-//     switch (dMA) {
-//       case '0':
-//         do0(mA);
-//         break;
-//       case '1':
-//         do1(mA);
-//         break;
-//       case '2':
-//         do2(mA);
-//         break;
-//       case '3':
-//         do3(mA);
-//         break;
-//       case '4':
-//         do4(mA);
-//         break;
-//       case '5':
-//         do5(mA);
-//         break;
-//       case '6':
-//         do6(mA);
-//         break;
-//       case '7':
-//         do7(mA);
-//         break;
-//       case '8':
-//         do8(mA);
-//         break;
-//       case '9':
-//         do9(mA);
-//         break;
-//       default:
-//         do0(mA);
-//     }
-//     cdMA = dMA;
-//   }
-
-//   if (cdMB > dMB) {
-//     switch (dMB) {
-//       case '0':
-//         do0(mB);
-//         break;
-//       case '1':
-//         do1(mB);
-//         break;
-//       case '2':
-//         do2(mB);
-//         break;
-//       case '3':
-//         do3(mB);
-//         break;
-//       case '4':
-//         do4(mB);
-//         break;
-//       case '5':
-//         do5(mB);
-//         break;
-//       case '6':
-//         do6(mB);
-//         break;
-//       case '7':
-//         do7(mB);
-//         break;
-//       case '8':
-//         do8(mB);
-//         break;
-//       case '9':
-//         do9(mB);
-//         break;
-//       default:
-//         do0(mB);
-//     }
-//     cdMB = dMB;
-//   }
-// }
-
-// doDate();
-// setInterval(updateDate, 1000);
-
-
 let
   hA = document.querySelector('#h-a'),
   hB = document.querySelector('#h-b'),
@@ -624,8 +273,6 @@ function t() {
     dSA = dS[0],
     dSB = dS[1];
 
-  console.log(dS);
-
   function switchHA() {
     switch (dHA) {
       case '0':
@@ -865,42 +512,51 @@ function t() {
 
 setInterval(t, 1000);
 
+let wait = false;
 
+function move(e) {
+  let mX = e.clientX,
+    mY = e.clientY,
+    wW = window.innerWidth,
+    wH = window.innerHeight,
+    xPer = Math.round((mX / wW) * 100),
+    yPer = Math.round((mY / wH) * 100),
+    x = Math.round((mX / wW) * 180),
+    y = Math.round((mY / wH) * 100);
+  document.body.style.background = `hsl(${x}, ${100 - y}%, 50%)`;
+  // let blockX = document.querySelectorAll('.x');
+  // for (el of blockX) {
+  //   el.style.background = `hsl(${y}, ${x}%, 50%)`
+  // }
 
+  let block = document.querySelectorAll('.block');
+  for (el of block) {
+    // el.style.borderTopLeftRadius = xPer + '%'
+    // el.style.borderTopRightRadius = yPer + '%'
+    // el.style.borderBottomLeftRadius = (100 - xPer) + '%'
+    // el.style.borderBottomRightRadius = (100 - yPer) + '%'
 
+    // el.style.borderTopLeftRadius = (100 - yPer) + '%'
+    // el.style.borderTopRightRadius = (100 - xPer) + '%'
+    // el.style.borderBottomLeftRadius = (100 - xPer) + '%'
+    // el.style.borderBottomRightRadius = (100 - yPer) + '%'
 
+    el.style.borderTopLeftRadius = (((100 - yPer) + (100 - xPer)) / 2) + '%'
+    el.style.borderTopRightRadius = (((100 - yPer) + xPer) / 2) + '%'
+    el.style.borderBottomLeftRadius = ((yPer + (100 - xPer)) / 2) + '%'
+    el.style.borderBottomRightRadius = ((yPer + xPer) / 2) + '%'
 
+    // el.style.borderTopLeftRadius = yPer + '%'
+    // el.style.borderTopRightRadius = (100 - xPer) + '%'
+    // el.style.borderBottomLeftRadius = (100 - xPer) + '%'
+    // el.style.borderBottomRightRadius = yPer + '%'
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-// let wait = false,
-//   rows = document.querySelectorAll('.row');
-
-// for (let el of rows)
-//   el.style.opacity = '0.5';
-
-// function move(e) {
-//   let mX = e.clientX,
-//     mY = e.clientY,
-//     wW = window.innerWidth,
-//     wH = window.innerHeight,
-//     x = Math.round((mX / wW) * 100),
-//     y = Math.round((mY / wH) * 100);
-// }
-
-// window.addEventListener('mousemove', event => {
-//   if (!wait) {
-//     move(event);
-//     wait = true;
-//     setTimeout(() => wait = false, 100);
-//   }
-// });
+window.addEventListener('mousemove', event => {
+  if (!wait) {
+    move(event);
+    wait = true;
+    setTimeout(() => wait = false, 25);
+  }
+});
