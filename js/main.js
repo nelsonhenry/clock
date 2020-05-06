@@ -560,3 +560,14 @@ window.addEventListener('mousemove', event => {
     setTimeout(() => wait = false, 25);
   }
 });
+
+if (window.DeviceMotionEvent) {
+  window.addEventListener("devicemotion", process, false);
+}
+
+function process(event) {
+  var x = event.accelerationIncludingGravity.x;
+  var y = event.accelerationIncludingGravity.y;
+  var z = event.accelerationIncludingGravity.z;
+  document.getElementById("debug").innerHTML = "<ul><li>X : " + x + "</li><li>Y : " + y + "</li><li>Z : " + z + "</li></ul>";
+}
