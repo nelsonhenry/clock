@@ -533,10 +533,14 @@ function move(e) {
 
   let block = document.querySelectorAll('.block');
   for (el of block) {
-    el.style.borderTopLeftRadius = (((100 - yPer) + (100 - xPer)) / 2) + '%'
-    el.style.borderTopRightRadius = (((100 - yPer) + xPer) / 2) + '%'
-    el.style.borderBottomLeftRadius = ((yPer + (100 - xPer)) / 2) + '%'
-    el.style.borderBottomRightRadius = ((yPer + xPer) / 2) + '%'
+    // el.style.borderTopLeftRadius = (((100 - yPer) + (100 - xPer)) / 2) + '%'
+    // el.style.borderTopRightRadius = (((100 - yPer) + xPer) / 2) + '%'
+    // el.style.borderBottomLeftRadius = ((yPer + (100 - xPer)) / 2) + '%'
+    // el.style.borderBottomRightRadius = ((yPer + xPer) / 2) + '%'
+    el.style.borderTopLeftRadius = ((yPer + xPer) / 2) + '%'
+    el.style.borderTopRightRadius = ((yPer + (100 - xPer)) / 2) + '%'
+    el.style.borderBottomLeftRadius = (((100 - yPer) + xPer) / 2) + '%'
+    el.style.borderBottomRightRadius = (((100 - yPer) + (100 - xPer)) / 2) + '%'
 
 
     // el.style.borderTopLeftRadius = xPer + '%'
@@ -570,10 +574,10 @@ function orient(e) {
   document.body.style.backgroundColor = `hsl(${xPer}, ${100 - yPer}%, 50%)`;
   let block = document.querySelectorAll('.block');
   for (el of block) {
-    el.style.borderTopLeftRadius = (((100 - yPer) + (100 - xPer)) / 2) + '%'
-    el.style.borderTopRightRadius = (((100 - yPer) + xPer) / 2) + '%'
-    el.style.borderBottomLeftRadius = ((yPer + (100 - xPer)) / 2) + '%'
-    el.style.borderBottomRightRadius = ((yPer + xPer) / 2) + '%'
+    el.style.borderTopLeftRadius = ((yPer + xPer) / 2) + '%'
+    el.style.borderTopRightRadius = ((yPer + (100 - xPer)) / 2) + '%'
+    el.style.borderBottomLeftRadius = (((100 - yPer) + xPer) / 2) + '%'
+    el.style.borderBottomRightRadius = (((100 - yPer) + (100 - xPer)) / 2) + '%'
   }
 }
 
