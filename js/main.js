@@ -565,9 +565,8 @@ if (window.DeviceMotionEvent) {
   window.addEventListener("devicemotion", process, false);
 }
 
-function process(event) {
-  var alpha = event.alpha;
-  var beta = event.beta;
-  var gamma = event.gamma;
-  document.getElementById("debug").innerHTML = "<ul><li>Alpha : " + alpha + "</li><li>Beta : " + beta + "</li><li>Gamma : " + gamma + "</li></ul>";
+function process(ev) {
+  var x = Math.round(ev.accelerationIncludingGravity.x);
+  var y = Math.round(ev.accelerationIncludingGravity.y);
+  document.getElementById("debug").innerHTML = "<ul><li>X : " + x + "</li><li>Y : " + y + "</li><li>Z : " + z + "</li></ul>";
 }
